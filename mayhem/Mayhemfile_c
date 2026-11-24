@@ -1,0 +1,12 @@
+project: savantenvs/lpython
+target: c-backend
+
+cmds:
+  - cmd: /mayhem/fuzz_c
+    libfuzzer: true
+    timeout: 10
+    max_length: 16384
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/c-backend/testsuite

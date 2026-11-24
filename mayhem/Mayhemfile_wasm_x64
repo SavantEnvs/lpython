@@ -1,0 +1,12 @@
+project: savantenvs/lpython
+target: wasm-x64
+
+cmds:
+  - cmd: /mayhem/fuzz_wasm_x64
+    libfuzzer: true
+    timeout: 10
+    max_length: 16384
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wasm-x64/testsuite

@@ -1,0 +1,12 @@
+project: savantenvs/lpython
+target: asr
+
+cmds:
+  - cmd: /mayhem/fuzz_asr
+    libfuzzer: true
+    timeout: 10
+    max_length: 16384
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/asr/testsuite
